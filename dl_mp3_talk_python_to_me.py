@@ -25,10 +25,9 @@ def download_file(url, local_filename):
         total_size = int(r.headers['content-length'])
         with open(local_filename, 'wb') as f:
             for data in tqdm(iterable=r.iter_content(chunk_size=chunk_size),
-                             total = total_size / chunk_size,
-                             unit= 'KB'):
+                             total=total_size / chunk_size,
+                             unit='KB'):
                 f.write(data)
-
     return local_filename
 
 
